@@ -33,7 +33,7 @@ public class Customer {
                     break;
 
                 case NEW_RELEASE:
-                    amount += rental.getDaysRented() * 3;
+                    amount += getNewReleaseAmount(rental.getDaysRented());
                     break;
 
                 case CHILDREN:
@@ -55,6 +55,10 @@ public class Customer {
         result += "Amount owed is " + total + "\n";
         result += "You earned " + frequentRenterPoints + " frequent renter points.";
         return result;
+    }
+
+    static int getNewReleaseAmount(int daysRented) {
+        return daysRented * 3;
     }
 
     static double getChildrenAmount(int daysRented) {
