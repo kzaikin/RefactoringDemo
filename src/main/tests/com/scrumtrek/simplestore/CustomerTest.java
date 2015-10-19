@@ -50,5 +50,17 @@ public class CustomerTest {
         double amount = Customer.getChildrenAmount(3);
         Assert.assertEquals(1.5d, amount, EPSILON);
     }
+
+    @Test
+    public void regularPricingTestOver2Days() {
+        double amount = Customer.getRegularAmount(5);
+        Assert.assertEquals(6.5d, amount, EPSILON);
+    }
+
+    @Test
+    public void regularPricingTest2OrLessDays() {
+        double amount = Customer.getRegularAmount(2);
+        Assert.assertEquals(2d, amount, EPSILON);
+    }
 }
 
