@@ -7,9 +7,9 @@ public class CustomerTest {
     @Test
     public void customerStatementEqualsReferenceValue() {
         // Create movies
-        Movie movCinderella = new Movie("Cinderella", PriceCodes.Childrens);
-        Movie movStarWars = new Movie("Star Wars", PriceCodes.Regular);
-        Movie movGladiator = new Movie("Gladiator", PriceCodes.NewRelease);
+        Movie movCinderella = new Movie("Cinderella", PriceCodes.CHILDREN);
+        Movie movStarWars = new Movie("Star Wars", PriceCodes.REGULAR);
+        Movie movGladiator = new Movie("Gladiator", PriceCodes.NEW_RELEASE);
 
         // Create customers
         Customer custMickeyMouse = new Customer("Mickey Mouse");
@@ -27,7 +27,7 @@ public class CustomerTest {
         custMickeyMouse.addRental(rental3);
 
         // Generate invoice
-        String statement = custMickeyMouse.Statement();
+        String statement = custMickeyMouse.getStatement();
 
         Assert.assertEquals("Rental record for Mickey Mouse\n" +
                 "\tCinderella\t3.0\n" +
