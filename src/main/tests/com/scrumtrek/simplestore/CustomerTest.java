@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CustomerTest {
+    private static final double EPSILON = 1e-4;
+
     @Test
     public void customerStatementEqualsReferenceValue() {
         // Create movies
@@ -35,6 +37,18 @@ public class CustomerTest {
                 "\tGladiator\t15.0\n" +
                 "Amount owed is 24.5\n" +
                 "You earned 4 frequent renter points.", statement);
+    }
+
+    @Test
+    public void childrenPricingOver3Days() {
+        double amount = Customer.getChildrenAmount(5);
+        Assert.assertEquals(3d, amount, EPSILON);
+    }
+
+    @Test
+    public void childrenPricing3OrLessDays() {
+        double amount = Customer.getChildrenAmount(3);
+        Assert.assertEquals(1.5d, amount, EPSILON);
     }
 }
 

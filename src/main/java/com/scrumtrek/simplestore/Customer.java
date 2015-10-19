@@ -37,10 +37,7 @@ public class Customer {
                     break;
 
                 case CHILDREN:
-                    amount += 1.5;
-                    if (rental.getDaysRented() > 3) {
-                        amount = (rental.getDaysRented() - 3) * 1.5;
-                    }
+                    amount += getChildrenAmount(rental.getDaysRented());
                     break;
             }
 
@@ -57,6 +54,14 @@ public class Customer {
 
         result += "Amount owed is " + total + "\n";
         result += "You earned " + frequentRenterPoints + " frequent renter points.";
+        return result;
+    }
+
+    static double getChildrenAmount(int daysRented) {
+        double result = 1.5;
+        if (daysRented > 3) {
+            result = (daysRented - 3) * 1.5;
+        }
         return result;
     }
 }
