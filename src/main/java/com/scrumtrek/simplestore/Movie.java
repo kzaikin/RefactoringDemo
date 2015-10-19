@@ -1,24 +1,18 @@
 package com.scrumtrek.simplestore;
 
-public class Movie {
+public abstract class Movie {
     private String title;
-    private PriceCodes priceCode;
 
-    public Movie(String title, PriceCodes priceCode) {
+    public Movie(String title) {
         this.title = title;
-        this.priceCode = priceCode;
-    }
-
-    public PriceCodes getPriceCode() {
-        return priceCode;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public double getAmount(int daysRented) {
-        throw new RuntimeException("Not implemented");
-    }
+    public abstract double getAmount(int daysRented);
+
+    public abstract int getPoints(int daysRented);
 }
 

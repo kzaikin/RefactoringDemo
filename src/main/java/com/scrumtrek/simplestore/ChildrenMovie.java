@@ -2,7 +2,7 @@ package com.scrumtrek.simplestore;
 
 public class ChildrenMovie extends Movie {
     public ChildrenMovie(String title) {
-        super(title, PriceCodes.CHILDREN);
+        super(title);
     }
 
     @Override
@@ -12,6 +12,11 @@ public class ChildrenMovie extends Movie {
             result = (daysRented - 3) * 1.5;
         }
         return result;
+    }
+
+    @Override
+    public int getPoints(int daysRented) {
+        return 0;
     }
 
 }
