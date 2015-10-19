@@ -35,7 +35,7 @@ public class Customer {
                     break;
 
                 case CHILDREN:
-                    amount += getChildrenAmount(rental.getDaysRented());
+                    amount += rental.getMovie().getAmount(rental.getDaysRented());
                     break;
             }
 
@@ -57,14 +57,6 @@ public class Customer {
 
     static int getNewReleaseAmount(int daysRented) {
         return daysRented * 3;
-    }
-
-    static double getChildrenAmount(int daysRented) {
-        double result = 1.5;
-        if (daysRented > 3) {
-            result = (daysRented - 3) * 1.5;
-        }
-        return result;
     }
 
     static double getRegularAmount(int daysRented) {

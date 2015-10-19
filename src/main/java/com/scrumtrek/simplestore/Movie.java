@@ -16,5 +16,9 @@ public class Movie {
     public String getTitle() {
         return title;
     }
+
+    public double getAmount(int daysRented) {
+        throw new RuntimeException("Not implemented");
+    }
 }
 

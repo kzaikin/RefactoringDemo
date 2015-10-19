@@ -8,7 +8,7 @@ public class CustomerTest {
 
     @Test
     public void customerStatementEqualsReferenceValue() {
-        Movie movCinderella = new Movie("Cinderella", PriceCodes.CHILDREN);
+        Movie movCinderella = new ChildrenMovie("Cinderella");
         Movie movStarWars = new Movie("Star Wars", PriceCodes.REGULAR);
         Movie movGladiator = new Movie("Gladiator", PriceCodes.NEW_RELEASE);
 
@@ -34,13 +34,13 @@ public class CustomerTest {
 
     @Test
     public void childrenPricingOver3Days() {
-        double amount = Customer.getChildrenAmount(5);
+        double amount = new ChildrenMovie("Cinderella").getAmount(5);
         Assert.assertEquals(3d, amount, EPSILON);
     }
 
     @Test
     public void childrenPricing3OrLessDays() {
-        double amount = Customer.getChildrenAmount(3);
+        double amount = new ChildrenMovie("Cinderella").getAmount(3);
         Assert.assertEquals(1.5d, amount, EPSILON);
     }
 
