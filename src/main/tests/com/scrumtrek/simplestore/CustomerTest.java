@@ -3,7 +3,7 @@ package com.scrumtrek.simplestore;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class CustomerTests {
+public class CustomerTest {
     @Test
     public void customerStatementEqualsReferenceValue() {
         // Create movies
